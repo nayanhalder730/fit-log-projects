@@ -1,10 +1,12 @@
 import Banner from "@/components/homePage/Banner";
-import Image from "next/image";
+import LibrarySection from "@/components/homePage/LibrarySection";
 
-export default function Home() {
+
+export default async function Home() {
   return (
-  <> 
-<Banner />
-  </>
+    <>
+      <Banner />
+      <LibrarySection />
+    </>
   );
 }
