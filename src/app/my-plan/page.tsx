@@ -4,10 +4,10 @@ import { IWorkout } from "@/type/gymType";
 import React from "react";
 
 const MyPlanPage = async () => {
-  const WorkoutData: IWorkout[] = await fetchALLData();
+  const WorkoutData: IWorkout[] = (await fetchALLData()) || [];
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 p-4">
+    <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 p-4">
       {WorkoutData.map((workout: IWorkout) => (
         <WorkoutCard
           key={workout.id}
