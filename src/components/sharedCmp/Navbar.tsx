@@ -15,7 +15,8 @@ const Navbar = () => {
   const pathname = usePathname();
 
   return (
-    <div className="navbar bg-[#0d0f12] text-white px-4 md:px-6 border-b border-gray-800">
+    <nav className="navbar bg-[#0d0f12] text-white px-4 md:px-6 border-b border-gray-800">
+         <div className="container mx-auto flex justify-between items-center w-full">
       <div className="navbar-start">
         <div className="dropdown">
           <div
@@ -107,6 +108,8 @@ const Navbar = () => {
         </Link>
       </div>
     </div>
+    </nav>
+   
   );
 };
 
