@@ -1,5 +1,6 @@
 "use client";
 
+import MyPlanDetailsCard from "@/components/homePage/MyPlanDetailsCard";
 import { useWorkoutContext } from "@/contex/WorkoutContex";
 
 const MyPlanPage = () => {
@@ -10,6 +11,11 @@ const MyPlanPage = () => {
 
   return (
     <div>
+      {
+        todayWorkout.map((workout) => (
+          <MyPlanDetailsCard key={workout.id} workout={workout} />
+        ))
+      }
 
     </div>
   );

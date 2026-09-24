@@ -15,7 +15,7 @@ const WorkoutCard = ({ workout }: WorkoutCardProps) => {
       href={`/my-plan/${workout.id}`}
       className="block bg-[#14161d] rounded-2xl overflow-hidden border border-gray-800/60 hover:border-gray-700 transition-all duration-300 hover:-translate-y-1 shadow-md"
     >
-      {/* Image Container */}
+    
       <div className="relative w-full h-52 bg-gray-900">
         <Image
           src={image}
@@ -25,9 +25,9 @@ const WorkoutCard = ({ workout }: WorkoutCardProps) => {
         />
       </div>
 
-      {/* Content Container */}
+   
       <div className="p-5 space-y-3">
-        {/* Muscle Groups */}
+   
         <div className="flex flex-wrap gap-2">
           {muscleGroups?.map((group, index) => (
             <span
@@ -39,7 +39,7 @@ const WorkoutCard = ({ workout }: WorkoutCardProps) => {
           ))}
         </div>
 
-        {/* Title & Equipment */}
+       
         <div>
           <h3 className="text-white text-xl font-black uppercase tracking-wide">
             {name}
@@ -49,9 +49,9 @@ const WorkoutCard = ({ workout }: WorkoutCardProps) => {
           </p>
         </div>
 
-        {/* Details Footer */}
+ 
         <div className="pt-3 border-t border-gray-800/80 flex items-center justify-start gap-6 text-gray-400 text-xs font-medium">
-          {/* Duration */}
+    
           <div className="flex items-center gap-1.5">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -66,7 +66,7 @@ const WorkoutCard = ({ workout }: WorkoutCardProps) => {
             <span>{duration} min</span>
           </div>
 
-          {/* Calories */}
+
           <div className="flex items-center gap-1.5">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -78,7 +78,7 @@ const WorkoutCard = ({ workout }: WorkoutCardProps) => {
             <span>{caloriesBurned} kcal</span>
           </div>
 
-          {/* Rating */}
+  
           <div className="flex items-center gap-1.5">
             <svg
               xmlns="http://www.w3.org/2000/svg"
