@@ -1,3 +1,5 @@
+import { IWorkout } from "@/type/gymType";
+
 export const fetchALLData = async (): Promise<IWorkout[]> => {
   try {
     const res = await fetch("https://api.abcz.workers.dev/api/fitlog");

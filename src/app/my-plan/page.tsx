@@ -1,19 +1,16 @@
-import WorkoutCard from "@/components/homePage/WorkoutCard";
-import { fetchALLData } from "@/lib/fetchALLData";
-import { IWorkout } from "@/type/gymType";
-import React from "react";
+"use client";
 
-const MyPlanPage = async () => {
-  const WorkoutData: IWorkout[] = (await fetchALLData()) || [];
+import { useWorkoutContext } from "@/contex/WorkoutContex";
+
+const MyPlanPage = () => {
+  const { todayWorkout, savedWorkout } = useWorkoutContext();
+
+  console.log("Today Workout:", todayWorkout);
+  console.log("Saved Workout:", savedWorkout);
 
   return (
-    <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 p-4">
-      {WorkoutData.map((workout: IWorkout) => (
-        <WorkoutCard
-          key={workout.id}
-          workout={workout}
-        />
-      ))}
+    <div>
+
     </div>
   );
 };
