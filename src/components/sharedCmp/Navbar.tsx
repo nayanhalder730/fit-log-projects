@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import navLogo from "@/assets/logo.png";
+import { useWorkoutContext } from "@/contex/WorkoutContex";
 
 const links = [
   { Link: "/", name: "Workouts" },
@@ -12,6 +13,9 @@ const links = [
 ];
 
 const Navbar = () => {
+
+  const { todayWorkout, savedWorkout } = useWorkoutContext();
+  
   const pathname = usePathname();
 
   return (
@@ -94,7 +98,7 @@ const Navbar = () => {
         >
           Plan
           <span className="badge bg-[#ccff00] text-black border-none font-bold text-xs px-1.5 md:px-2">
-            0
+            {todayWorkout.length}
           </span>
         </Link>
         <Link
@@ -103,7 +107,7 @@ const Navbar = () => {
         >
           Saved
           <span className="badge badge-outline text-white border-gray-600 text-xs px-1.5 md:px-2">
-            0
+            {savedWorkout.length}
           </span>
         </Link>
       </div>

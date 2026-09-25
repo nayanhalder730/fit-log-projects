@@ -25,7 +25,7 @@ const MyPlanDetailCard = ({
   onDone,
   onRemove,
 }: MyPlanDetailCardProps) => {
-  // Mark as Done handler
+  // Mark as Done
   const handleDone = () => {
     onDone(item.id);
 
@@ -42,13 +42,30 @@ const MyPlanDetailCard = ({
     });
   };
 
+  // Remove
+  const handleRemove = () => {
+    onRemove(item.id);
+
+    toast.success(`"${item.name}" removed from your plan!`, {
+      position: "top-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: false,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+      transition: Bounce,
+    });
+  };
+
   return (
     <div className="bg-[#12151c] border border-gray-800/80 rounded-2xl p-4 sm:p-5 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
       
-      {/* Left Content */}
+      {/* Workout Info */}
       <div className="flex items-center gap-4 min-w-0">
         
-        {/* Workout Image */}
+        {/* Image */}
         <div className="relative w-28 h-20 sm:w-32 sm:h-20 rounded-xl overflow-hidden bg-gray-900 shrink-0 border border-gray-800">
           <Image
             src={item.image}
@@ -58,7 +75,7 @@ const MyPlanDetailCard = ({
           />
         </div>
 
-        {/* Workout Info */}
+        {/* Name + Equipment + Stats */}
         <div className="space-y-1 min-w-0">
           <h3 className="font-extrabold text-white text-base uppercase tracking-wide truncate">
             {item.name}
@@ -90,7 +107,7 @@ const MyPlanDetailCard = ({
               {item.duration ?? 0} min
             </span>
 
-            {/* Calories Burned */}
+            {/* Calories */}
             <span className="flex items-center gap-1">
               <svg
                 className="w-3.5 h-3.5 text-[#ccff00]"
@@ -161,7 +178,7 @@ const MyPlanDetailCard = ({
         {/* Remove */}
         <button
           type="button"
-          onClick={() => onRemove(item.id)}
+          onClick={handleRemove}
           className="p-1.5 text-gray-500 hover:text-white transition-all ml-1 cursor-pointer"
           title="Remove"
         >
