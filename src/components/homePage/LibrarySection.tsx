@@ -1,5 +1,4 @@
 import { fetchALLData } from '@/lib/fetchALLData';
-import React from 'react';
 import WorkoutCard from './WorkoutCard';
 import { IWorkout } from "@/type/gymType";
 
