@@ -93,7 +93,7 @@ const Navbar = () => {
 
       <div className="navbar-end gap-1 md:gap-2">
         <Link
-          href="/my-plan"
+          href="/my-plan?tab=today"
           className="btn btn-ghost btn-xs md:btn-sm text-white font-normal hover:bg-gray-800 px-2 md:px-3 flex items-center"
         >
           Plan
@@ -102,7 +102,7 @@ const Navbar = () => {
           </span>
         </Link>
         <Link
-          href="/my-plan"
+          href="/my-plan?tab=saved"
           className="btn btn-ghost btn-xs md:btn-sm text-white font-normal hover:bg-gray-800 px-2 md:px-3 flex items-center"
         >
           Saved
